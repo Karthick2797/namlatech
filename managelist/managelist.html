@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>list</title>
+    <link rel="stylesheet" href="managelist.css">
+</head>
+<body>
+
+    <h2>Workers and Products details lists</h2>
+    
+    <div class="tab">
+      <button class="tablinks" onclick="openlist(event, 'workers')" id="defaultOpen">Workers List</button>
+      <button class="tablinks" onclick="openlist(event, 'Products')">Products List</button>
+      
+    </div>
+    
+    <div id="workers" class="tabcontent">
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Staff Name</th>
+          <th>Depatment</th>
+          <th>Shift Timing</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>karthick</td>
+          <td>front end</td>
+          <td>9 a.m to 6 p.m</td>
+        </tr>
+      </table>
+    </div>
+    
+    <div id="Products" class="tabcontent">
+      <table>
+        <tr>
+          <th>S.No</th>
+          <th>Product Name</th>
+          <th>Product ID</th>
+          <th>Manufactured Date</th>
+          <th>Count</th>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>laptop</td>
+          <td>HP3210</td>
+          <td>AUG 2022</td>
+          <td>10</td>
+        </tr>
+      </table>
+    </div>
+    
+
+    
+    <script>
+    function openlist(evt, list) {
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(list).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+    
+    document.getElementById("defaultOpen").click();
+    </script>
+    
+</body>
+</html>
